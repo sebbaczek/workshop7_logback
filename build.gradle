@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+//group 'org.example'
+//version '1.0-SNAPSHOT'
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '18'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //logback-classic dodaje też slf4j
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.5'
+//    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.5'
+    //slf4j-simple domyślnie nie loguje poziomu poniżej info, slf4j-simple zastępuje np. logbacka;
+//    konfiguracja w simplelogger.properties
+//    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.5'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
